@@ -20,4 +20,10 @@ public class NameController {
         List<Name> names = nameMapper.findAll();
         return names;
     }
+    @GetMapping("/allnames")
+    public List<String> getAllNames() {
+        List<String> allName = nameMapper.findAllName();
+        return allName;
+    }
+
 }
