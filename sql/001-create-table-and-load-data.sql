@@ -8,3 +8,4 @@ CREATE TABLE names (
 
 INSERT INTO names (id, name) VALUES (1, "suzuki");
 INSERT INTO names (id, name) VALUES (2, "saitou");
+INSERT INTO names (id, name) VALUES (3, "kohaku");
