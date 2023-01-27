@@ -14,12 +14,12 @@ public class NameController {
         this.nameService = nameService;
     }
 
-    @GetMapping("/names")
+    @GetMapping("/members")
     public List<Name> getNames() {
     return nameService.findAll();
     }
 
-    @GetMapping("/allnames")
+    @GetMapping("/names")
     public List<String> getAllNames() {
         return nameService.findAllName();
     }
