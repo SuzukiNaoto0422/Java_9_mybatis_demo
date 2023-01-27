@@ -7,9 +7,9 @@ import java.util.Date;
 import java.util.List;
 
 @Mapper
-public interface NameMapper {
+public interface MemberMapper {
     @Select("SELECT * FROM members")
-    List<Name> findAll();
+    List<Member> findAll();
 
     @Select("SELECT name FROM members")
     List<String> findAllName();

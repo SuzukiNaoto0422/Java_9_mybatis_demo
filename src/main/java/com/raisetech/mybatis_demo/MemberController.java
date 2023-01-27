@@ -7,27 +7,27 @@ import java.util.Date;
 import java.util.List;
 
 @RestController
-public class NameController {
+public class MemberController {
 
-    private final NamerService nameService;
+    private final MemberService memberService;
 
-    public NameController(NamerService nameService) {
-        this.nameService = nameService;
+    public MemberController(MemberService memberService) {
+        this.memberService = memberService;
     }
 
     @GetMapping("/members")
-    public List<Name> getMembers() {
-    return nameService.findAll();
+    public List<Member> getMembers() {
+    return memberService.findAll();
     }
 
     @GetMapping("/names")
     public List<String> getNames() {
-        return nameService.findAllName();
+        return memberService.findAllName();
     }
 
     @GetMapping("/birthday")
     public List<Date> getBirthday() {
-        return nameService.findAllBirthday();
+        return memberService.findAllBirthday();
     }
 
 }
