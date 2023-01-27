@@ -30,4 +30,10 @@ public class MemberController {
         return memberService.findAllBirthday();
     }
 
+    @GetMapping("/age>=35")
+    public List<String> findOverAge35() {
+        return memberService.findOverAge35();
+    }
+
+
 }

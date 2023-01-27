@@ -8,4 +8,6 @@ public interface MemberService {
     List<String> findAllName();
 
     List<String> findAllBirthday();
+
+    List<String> findOverAge35();
 }
