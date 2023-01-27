@@ -8,16 +8,20 @@ import java.util.List;
 @RestController
 public class NameController {
 
-    private final NameMapper nameMapper;
+    private final NameService nameService;
 
-    //constructor injection
-    private NameController(NameMapper nameMapper) {
-        this.nameMapper = nameMapper;
+    public NameController(NameService nameService) {
+        this.nameService = nameService;
+    }
+
+    @GetMapping("/members")
+    public List<Name> getNames() {
+    return nameService.findAll();
     }
 
     @GetMapping("/names")
-    public List<Name> getNames() {
-        List<Name> names = nameMapper.findAll();
-        return names;
+    public List<String> getAllNames() {
+        return nameService.findAllName();
     }
+
 }
