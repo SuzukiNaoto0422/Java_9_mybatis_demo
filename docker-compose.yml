@@ -23,7 +23,7 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: name_list
+      MYSQL_DATABASE: novelist
       MYSQL_USER: user
       MYSQL_PASSWORD: password
     ports:
