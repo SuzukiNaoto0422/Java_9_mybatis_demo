@@ -2,6 +2,8 @@ package com.raisetech.mybatis_demo;
 
 import org.springframework.stereotype.Service;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -25,8 +27,13 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-    public List<Date> findAllBirthday() {
-        return memberMapper.findAllBirthday();
+    public List<String> findAllBirthday() {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy年 MM月 dd日");
+        List<String> birthdayList = new ArrayList<>();
+        for (Date date : memberMapper.findAllBirthday()) {
+            birthdayList.add(sdf.format(date));
+        }
+        return birthdayList;
     }
 
 }
