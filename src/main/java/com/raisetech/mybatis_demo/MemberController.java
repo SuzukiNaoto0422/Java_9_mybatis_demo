@@ -1,9 +1,10 @@
 package com.raisetech.mybatis_demo;
 
+import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -30,9 +31,9 @@ public class MemberController {
         return memberService.findAllBirthday();
     }
 
-    @GetMapping("/age>=35")
-    public List<String> findOverAge35() {
-        return memberService.findOverAge35();
+    @GetMapping("/overage")
+    public List<String> findOverAge(@NonNull @RequestParam(name = "age")int age) {
+        return memberService.findOverAge(age);
     }
 
 

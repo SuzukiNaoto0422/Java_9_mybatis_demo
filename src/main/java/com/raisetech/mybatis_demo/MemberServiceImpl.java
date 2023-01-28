@@ -37,7 +37,7 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-    public List<String> findOverAge35() {
-        return memberMapper.findOverAge35();
+    public List<String> findOverAge(int age) {
+        return memberMapper.findOverAge(age);
     }
 }
