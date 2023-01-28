@@ -6,11 +6,13 @@ public class Member {
     private  int id;
     private String name;
     private Date birthday;
+    private int age;
 
-    public Member(int id, String name, Date birthday) {
+    public Member(int id, String name, Date birthday, int age) {
         this.id = id;
         this.name = name;
         this.birthday = birthday;
+        this.age = age;
     }
 
     public int getId() {
@@ -24,4 +26,9 @@ public class Member {
     public Date getBirthday() {
         return birthday;
     }
+
+    public int getAge() {
+        return age;
+    }
+    
 }

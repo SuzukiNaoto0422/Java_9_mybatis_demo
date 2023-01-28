@@ -17,6 +17,6 @@ public interface MemberMapper {
     @Select("SELECT birthday FROM members")
     List<Date> findAllBirthday();
 
-    @Select("SELECT name FROM members WHERE age >= 35")
-    List<String> findOverAge35();
+    @Select("SELECT * FROM members WHERE age >= #{age}")
+    List<Member> findOverAge(String age);
 }
