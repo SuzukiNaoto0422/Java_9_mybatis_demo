@@ -26,8 +26,14 @@ public class MemberController {
     }
 
     @GetMapping("/birthday")
-    public List<Date> getBirthday() {
+    public List<String> getBirthday() {
         return memberService.findAllBirthday();
     }
+
+    @GetMapping("/age>=35")
+    public List<String> findOverAge35() {
+        return memberService.findOverAge35();
+    }
+
 
 }
