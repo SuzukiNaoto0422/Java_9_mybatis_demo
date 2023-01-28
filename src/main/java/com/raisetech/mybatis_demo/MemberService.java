@@ -10,5 +10,5 @@ public interface MemberService {
 
     List<String> findAllBirthday();
 
-    List<String> findOverAge(int age);
+    List<Member> findOverAge(String age);
 }

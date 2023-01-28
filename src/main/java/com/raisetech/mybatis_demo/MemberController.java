@@ -1,6 +1,5 @@
 package com.raisetech.mybatis_demo;
 
-import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,8 +16,12 @@ public class MemberController {
     }
 
     @GetMapping("/members")
-    public List<Member> getMembers() {
-    return memberService.findAll();
+    public List<Member> getMembers(@RequestParam(name = "age",required = false)String age) {
+        if (age == null) {
+            return memberService.findAll();
+        } else {
+            return memberService.findOverAge(age);
+        }
     }
 
     @GetMapping("/names")
@@ -30,11 +33,4 @@ public class MemberController {
     public List<String> getBirthday() {
         return memberService.findAllBirthday();
     }
-
-    @GetMapping("/overage")
-    public List<String> findOverAge(@NonNull @RequestParam(name = "age")int age) {
-        return memberService.findOverAge(age);
-    }
-
-
 }
