@@ -17,11 +17,11 @@ public class MemberController {
 
     @GetMapping("/members")
     public List<Member> getMembers(@RequestParam(name = "age",required = false)String age) {
-        if (age == null) {
-            return memberService.findAll();
-        } else {
-            return memberService.findOverAge(age);
-        }
+                if (age == null) {
+                return memberService.findAll();
+                } else {
+                return memberService.findOverAge(age);
+                }
     }
 
     @GetMapping("/names")
